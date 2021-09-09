@@ -1,0 +1,57 @@
+<div class="lex-table mt-2">
+
+  <div class="lex-table-header">
+    <div class="lex-table-row">
+      <div class="lex-table-column" *ngFor="let column of columns; let indexColumn = index"
+        [ngClass]="column.id === 'btn-actions' ? 'text-actions' :''">
+        <div class="text-actions">
+          <span *ngIf="column.id === 'btn-actions'">{{column.name}}</span>
+        </div>
+        <!-- Texto simples do header -->
+        <app-table-order *ngIf="column.id !== 'btn-actions'" [sLabel]="column.name"
+          [nIndex]="column.ordination.orderType" (click)="onSortColumn(column)">
+        </app-table-order>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="lex-table-content" [hidden]="preloader">
+    <div class="lex-table-row" *ngFor="let d of data; let indexData = index" [ngStyle]="{
+      backgroundColor: indexData % 2 !== 0 ? '#f9f9f9' : '#fff',
+      borderRadius: indexData === data.length - 1 ? '0 0 5px 5px' : '',
+      paddingLeft: showStatus ? 0 : ''
+    }">
+
+      <div class="lex-table-column" *ngFor="let column of columns; let indexColumn = index">
+        <span [title]="d[column.id]" class="table-text"
+          *ngIf="column.id !== 'date' && column.id !== 'value' && column.id !== 'isPayed'">
+          {{ d[column.id] }}
+          <br>
+          <span *ngIf="d[column.username]" class="text-secundary">@{{ d[column.username] }}</span>
+        </span>
+
+        <span [title]="d[column.id]" class="table-text" *ngIf="column.id === 'date'">
+          {{d[column.id] | date:'dd/MM/yyyy'}}
+          <br>
+          <span class="text-secundary">{{d[column.id] | date:'HH:mm a'}}</span>
+        </span>
+
+        <span [title]="d[column.id]" class="table-text" *ngIf="column.id === 'value'">
+          {{d[column.id] | currency: 'BRL'}}
+        </span>
+
+        <input type="checkbox" [checked]="d[column.id]" (change)="d[column.id] = !d[column.id]"
+          *ngIf="column.id === 'isPayed'" />
+
+        <div *ngIf="column.id === 'btn-actions'" class="column-icons">
+
+          <mat-icon (click)="editPayment(d)" aria-hidden="false" style="color: blue">edit</mat-icon>
+
+          <mat-icon (click)="deletePayment(d)" aria-hidden="false" style="color: red">delete</mat-icon>
+
+        </div>
+      </div>
+    </div>
+
+  </div>

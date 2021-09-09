@@ -1,0 +1,60 @@
+<div class="login-page login-page--large">
+  <!-- BLOCK (B) -->
+  <div class="login-page__aside">
+    <section class="login-area">
+      <app-alert></app-alert>
+      <h1 class="login-area__logo">
+        <img title="Pay Friends" alt="Pay Friends" src="/assets/images/logo.svg" />
+      </h1>
+      <div *ngIf="!screenRegister">
+        <p class="login-page__text-welcome">Bem vindo de volta</p>
+        <form [formGroup]="_accountForm" (ngSubmit)="login($event)">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Digite seu E-mail</mat-label>
+            <input matInput formControlName="email" type="text" maxlength="50" tabindex="1" />
+            <mat-icon matPrefix color="primary" class="mr-10">email</mat-icon>
+          </mat-form-field>
+
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Digite sua senha</mat-label>
+
+            <mat-icon matPrefix color="primary" class="mr-10">lock</mat-icon>
+
+            <input matInput formControlName="password" [type]="showPassword ? 'text' : 'password'" maxlength="50"
+              tabindex="2" />
+
+            <button mat-icon-button matSuffix aria-haspopup="true"
+              [matTooltip]="showPassword ? 'Esconder senha' : 'Mostrar senha'" class="ml-10 i-action"
+              (click)="togglePasswordVisibility()" [attr.aria-label]="showPassword ? 'Esconder senha' : 'Mostrar senha'"
+              [attr.aria-pressed]="showPassword" tabindex="4" type="button">
+              <mat-icon>
+                {{ showPassword ? 'visibility' : 'visibility_off' }}
+              </mat-icon>
+            </button>
+
+          </mat-form-field>
+
+          <div class="form-info">
+            <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
+          </div>
+
+          <div class="div-btn-action">
+            <button mat-flat-button color="primary" type="submit" class="w-100 pic-button" style="margin-top: 36px;"
+              tabindex="3">Entrar</button>
+            <button mat-button class="btn __btn-register" (click)="registerShow()">Registrar-se</button>
+          </div>
+        </form>
+      </div>
+
+      <app-register-page *ngIf="screenRegister" (changeScren)="registerShow()"></app-register-page>
+
+    </section>
+
+  </div>
+  <div class="login-page__background">
+
+    <img title="Pay Friends" alt="Pay Friends" class="login-page__welcome" src="/assets/images/main-login-pay.svg" />
+
+  </div>
+</div>

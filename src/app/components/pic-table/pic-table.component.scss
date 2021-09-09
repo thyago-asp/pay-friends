@@ -1,0 +1,186 @@
+@import "../../../app/styles/variables";
+
+.lex-table {
+  display: grid;
+  border-radius: 5px;
+  font-size: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.lex-table-header {
+  background-color: #ddd;
+}
+
+.lex-table-header .lex-table-column {
+  white-space: nowrap;
+  color: #000;
+  font-weight: 600;
+}
+
+.lex-table-content {
+  color: #666;
+}
+
+.table-historic-user {
+  font-size: 12px;
+}
+
+.lex-table-content .lex-table-row {
+  border: solid 1px #ddd;
+  border-top: 0;
+  font-family: "Lato";
+}
+
+.lex-table-content:not(.readonly) .lex-table-row:hover {
+  cursor: pointer;
+  box-shadow: 0px 5px 7px #4a4a4a1a;
+  position: relative;
+}
+
+.lex-table-content .lex-table-column {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.lex-table-row {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  min-height: 56px;
+  padding: 16px 24px;
+  max-height: 56px;
+}
+
+.lex-table .no-data {
+  min-height: 56px;
+  display: flex;
+  justify-content: center;
+  border: solid 1px #ddd;
+  color: #000;
+  border-radius: 0 0 5px 5px;
+  align-items: center;
+}
+
+.lex-table-column {
+  display: flex;
+
+  width: 50%;
+  padding: 0 24px;
+  word-break: break-word;
+}
+
+.lex-table .checkbox {
+  padding: 0;
+}
+
+.lex-table .checkbox .input-span {
+  height: 16px;
+  width: 16px;
+  border: 1px solid #ccc;
+}
+
+.lex-table .checkbox .input-span::after {
+  left: 4px;
+  top: 1px;
+}
+
+.lex-table .checkbox input {
+  top: -17px;
+  left: -10px;
+  height: 50px;
+  width: 35px;
+  max-width: none;
+}
+
+.lex-table .checkbox input:hover {
+  cursor: pointer;
+}
+
+.lex-table .checkbox input:checked ~ .input-span {
+  border-color: #18c5a9;
+}
+
+.info-row__column .info-title {
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 9px;
+}
+
+.position--lex-table {
+  position: absolute;
+  left: 8px;
+  top: -8px;
+}
+
+.lex-table .span-count {
+  margin-left: 4px;
+}
+
+.lex-table .table-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text-actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+.selected-items__container {
+  margin: 24px 0 8px;
+  height: 32px;
+}
+
+.selected-items__container .text-ent {
+  display: inline-block;
+  width: auto;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000;
+  margin: 0 10px 0 0;
+}
+
+.table-limited {
+  height: 100%;
+}
+
+.register-not-found{
+  text-align: center;
+}
+
+.table-limited-body {
+  display: block;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.text-secundary {
+  color: hsl($secundary-text);
+  font-size: 12px;
+}
+
+.column-icons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  width: 190px;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(252, 252, 252);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(182, 182, 182);
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+}

@@ -1,0 +1,56 @@
+@mixin btn-transparent {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.pic-button {
+  text-transform: uppercase !important;
+  font-weight: 700;
+  padding: 4px 12px 3px 12px !important;
+  border-radius: 3px !important;
+  background-color: hsl($primary) !important;
+  height: 40px;
+  color: white;
+  &--medium {
+    width: 100%;
+    max-width: 277px;
+  }
+
+  &--small {
+    width: 100%;
+    max-width: 160px;
+  }
+
+  &--border {
+    box-shadow: inset 0px 0px 0px 1.5px rgba(0, 0, 0, 0.87) !important;
+  }
+
+  &--mr-24 {
+    margin-right: 24px !important;
+  }
+
+  &--mt-16 {
+    margin-top: 16px !important;
+  }
+
+  &--transparent {
+    @include btn-transparent;
+  }
+}
+
+.pic-button-link {
+  @include btn-transparent;
+
+  text-decoration: underline;
+  color: hsl($primary);
+  font-size: 1rem;
+  text-align: left;
+}

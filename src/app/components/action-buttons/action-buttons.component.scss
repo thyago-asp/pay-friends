@@ -1,0 +1,16 @@
+@import "../../../app/styles/variables";
+
+.__btn-save {
+  &:hover {
+    color: hsl($white);
+  }
+  color: hsl($white);
+  width: 150px;
+
+}
+
+.__btn-cancel{
+  width: 150px;
+  background-color: hsl($light-gray) !important;
+  margin-right: 10px;
+}

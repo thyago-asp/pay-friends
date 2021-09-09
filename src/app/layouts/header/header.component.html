@@ -1,0 +1,26 @@
+<header class="user-portal-header">
+
+  <div class="__logo">
+    <img src="../../../assets/images/logo-small.svg" alt="logo pic friends">
+  </div>
+
+  <!-- <div>tenant-name</div> -->
+
+  <div class="user-portal-header__menu">
+
+    <button class="lex-button--transparent hidden-on-small"  mat-icon-button [matMenuTriggerFor]="menu">
+      <img class="img-user" src="../../../assets/images/picture-thyago.png">
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <p class="hidden-on-small name-of-user" >Olá {{client.user.firstname}}</p>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon class="red-style">exit_to_app</mat-icon>
+        <span class="red-style">Sair</span>
+      </button>
+    </mat-menu>
+
+  </div>
+
+</header>

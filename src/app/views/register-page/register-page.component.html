@@ -1,0 +1,52 @@
+<form [formGroup]="registerForm" (ngSubmit)="register($event)" class="container">
+
+  <div class="row">
+
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Primeiro nome</mat-label>
+      <input matInput formControlName="firstname" type="text" maxlength="50" tabindex="1" />
+      <mat-icon matPrefix color="primary" class="mr-10">account_circle</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Último nome</mat-label>
+      <input matInput formControlName="lastname" type="text" maxlength="50" tabindex="1" />
+      <mat-icon matPrefix color="primary" class="mr-10">account_circle</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>E-mail</mat-label>
+    <input matInput formControlName="email" type="text" maxlength="50" tabindex="1" />
+    <mat-icon matPrefix color="primary" class="mr-10">email</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Senha</mat-label>
+    <mat-icon matPrefix color="primary" class="mr-10">lock</mat-icon>
+
+    <input matInput formControlName="password" [type]="showPassword ? 'text' : 'password'" maxlength="50"
+      tabindex="2" />
+
+    <button mat-icon-button matSuffix aria-haspopup="true"
+      [matTooltip]="showPassword ? 'Esconder senha' : 'Mostrar senha'" class="ml-10 i-action"
+      (click)="togglePasswordVisibility()" [attr.aria-label]="showPassword ? 'Esconder senha' : 'Mostrar senha'"
+      [attr.aria-pressed]="showPassword" tabindex="4" type="button">
+      <mat-icon>
+        {{ showPassword ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </button>
+
+  </mat-form-field>
+
+  <div class="form-info">
+    <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
+  </div>
+
+  <div class="div-btn-action">
+    <button mat-flat-button color="primary" type="submit" class="w-100 pic-button" style="margin-top: 36px;"
+      tabindex="3">Cadastrar</button>
+    <button mat-button class="btn __btn-register" (click)="registerShow()">Cancelar</button>
+
+  </div>
+</form>

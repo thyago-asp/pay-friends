@@ -1,0 +1,17 @@
+<div class="table_order_btn">
+  {{sLabel}}
+  <div *ngIf="drawType(0)" class="table_order_btn_asc">
+      <i class="material-icons arrow-up">arrow_upward</i>
+      <i class="material-icons arrow-down">arrow_downward</i>
+  </div>
+
+  <div *ngIf="drawType(1)"  class="table_order_btn_asc">
+      <i class="material-icons sel arrow-up">arrow_upward</i>
+      <i class="material-icons arrow-down">arrow_downward</i>
+  </div>
+
+  <div *ngIf="drawType(2)" class="table_order_btn_asc">
+      <i class="material-icons arrow-up">arrow_upward</i>
+      <i class="material-icons sel arrow-down">arrow_downward</i>
+  </div>
+</div>

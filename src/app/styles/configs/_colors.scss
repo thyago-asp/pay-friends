@@ -1,0 +1,26 @@
+// Color palets: https://sujansundareswaran.com/blog/why-hsl-is-better-than-hex-and-rgb
+
+// Example of how to use: h1 { color: hsl($heavy-blue) }
+
+// Primary colors
+$heavy-blue: 213, 66%, 28%;
+$light-blue: 214, 100%, 21%;
+$light-green: 210, 100%, 50%;
+$medium-green: 193, 45%, 48%;
+
+// Secondary colors
+$hard-gray: 0, 0%, 48%;
+$medium-gray : 0, 0%, 62%;
+$light-gray: 0, 0%, 95%;
+$light-white: 0, 0%, 95%;
+$white: 0, 0%, 100%;
+$secundary-text: 214, 14%, 48%;
+
+// Support
+$pure-black: 0, 0%, 0%;
+$green-confirm: 122, 39%, 49%;
+$yellow-alert: 43, 96%, 58%;
+$red-warning: 1, 77%, 55%;
+
+$primary: $light-green;
+$accent: $light-blue;

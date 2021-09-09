@@ -1,0 +1,60 @@
+<form [formGroup]="modalSection">
+  <p class="title-modal">{{data.edit ? 'Editar pagamento' : 'Adicionar pagamento'}}</p>
+  <div class="modal-new-pay container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="__input-search">
+          <mat-label>Usuário*</mat-label>
+          <input matInput type="text" [(ngModel)]="data.name" formControlName="nameUser">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="__input-search" floatLabel="always">
+          <mat-label>Valor*</mat-label>
+          <input matInput type="number" [(ngModel)]="data.value" formControlName="valueUser" class="field-right-align"
+            placeholder="0">
+          <span matPrefix class="prefix">R$&nbsp;</span>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="__input-search" floatLabel="always">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" [(ngModel)]="data.username" formControlName="username" placeholder="Apelido">
+          <span matPrefix class="prefix">@&nbsp;</span>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 div-ispayed">
+
+        <mat-label style="margin-right: 10px;">Pago</mat-label>
+
+        <input type="checkbox" [(ngModel)]="data.isPayed" formControlName="isPayed" class="field-right-align"
+          placeholder="0">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="__input-search">
+          <mat-label>Data*</mat-label>
+          <input matInput type="date" [ngModel]="data.date | date:'yyyy-MM-dd'" formControlName="dateUser">
+
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="__input-search">
+          <mat-label>Titulo</mat-label>
+          <input matInput type="text" [(ngModel)]="data.title" formControlName="titleUser">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="__area-btn">
+    <app-action-buttons (saveClick)="saveAction()" (cancelClick)="cancelAction()"></app-action-buttons>
+  </div>
+
+</form>

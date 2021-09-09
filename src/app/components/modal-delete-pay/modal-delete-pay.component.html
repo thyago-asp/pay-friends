@@ -1,0 +1,25 @@
+<form>
+  <p class="title-modal">Excluir pagamento</p>
+  <div class="modal-delete-pay container-fluid">
+
+    <div class="">
+      <div style="text-align: center;">
+        <img class="img-user" src='{{data.payment.image}}'>
+      </div>
+      <div class="row">
+        <p class="title-description">Usuário: <span>{{data.payment.name}}</span></p>
+
+      </div>
+      <div class="row">
+        <p class="title-description">Data: <span>{{data.payment.date | date: "dd/MM/yyyy"}}</span></p>
+      </div>
+      <div class="row">
+        <p class="title-description">Valor: <span>{{data.payment.value | currency: 'BRL'}}</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="__area-btn">
+    <app-action-buttons (saveClick)="saveAction()" (cancelClick)="cancelAction()"></app-action-buttons>
+  </div>
+
+</form>

@@ -1,0 +1,46 @@
+
+<div class="container payments-page">
+
+  <div class="row payments-page__top-title">
+    <div class="col-md-6 col-sm-12">
+      <p class="__text-title">Meus pagamentos</p>
+    </div>
+
+    <div class="col-md-6 col-sm-12 __div-btn-add-pay">
+      <button class="btn __btn-add-payments pic-button" (click)="openModal()">Adicionar pagamento</button>
+    </div>
+  </div>
+
+
+  <div class="payments-page__main-containt">
+    <app-alert></app-alert>
+    <div class="__filters row">
+      <div class="col-md-6 col-sm-12">
+        <div class="__search-user">
+          <mat-form-field appearance="outline" class="__input-search">
+            <mat-label>Pesquisar por usuário</mat-label>
+            <input matInput type="text" [(ngModel)]="nameUser">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+          <button class="btn pic-button btn-search" (click)="filterUser()">Filtrar</button>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="__pagination">
+          <mat-paginator [length]="length" [pageSizeOptions]="pageSizeOptions" (page)="onChangePage($event)"
+            aria-label="Select page">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+
+    <div class="__table-payments">
+      <app-pic-table [columns]="picTable.columns" [data]="picTable.data" (sortColumn)="onOrder($event)"
+        (delete)="deleteAction($event)" (edit)="editAction($event)"></app-pic-table>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- <app-modal-add-pay [customId]="'modalAddPay'" (onConfirm)="createPay($event)"></app-modal-add-pay> -->
